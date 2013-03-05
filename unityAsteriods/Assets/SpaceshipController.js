@@ -6,6 +6,8 @@ var rightmost:float;
 var topmost:float;
 var bottommost:float;
 
+var laserBeam:Rigidbody;
+
 function Start () {
 
 }
@@ -15,6 +17,11 @@ function Update () {
 	if(Input.GetKey(KeyCode.Space))
 	{
 		speed = 10;
+	}
+	
+	if(Input.GetKeyDown(KeyCode.Z))
+	{
+		Instantiate(laserBeam,transform.position,transform.rotation);
 	}
 
 	if (transform.position.x > (BorderController.rightmost-2))

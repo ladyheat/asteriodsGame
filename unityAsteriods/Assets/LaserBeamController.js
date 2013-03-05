@@ -12,7 +12,7 @@ function Update () {
 
 }
 
-function OnBecameVisible() { //when beam goes off screen, it is destroyed
+function OnBecameInvisible() { //when beam goes off screen, it is destroyed
 	
 	Destroy(this.gameObject);
 	
