@@ -12,6 +12,11 @@ function Start () {
 
 function Update () {
 
+	if(Input.GetKey(KeyCode.Space))
+	{
+		speed = 10;
+	}
+
 	if (transform.position.x > (BorderController.rightmost-2))
 	{
 		transform.position.x = (BorderController.leftmost+2);
@@ -34,7 +39,7 @@ function Update () {
 	}
 
 	transform.Translate(Vector3.up * speed * Time.deltaTime * Input.GetAxis("Vertical"));
-	transform.Rotate(Vector3.forward * -20 * Time.deltaTime * Input.GetAxis("Horizontal"));
+	transform.Rotate(Vector3.forward * -50 * Time.deltaTime * Input.GetAxis("Horizontal"));
 	
 	
 }
