@@ -49,6 +49,7 @@
      <Compile Include="Assets\BorderController.js" />
      <Compile Include="Assets\LaserBeamController.js" />
      <Compile Include="Assets\Menu.js" />
+     <Compile Include="Assets\PowerupGenerator.js" />
      <Compile Include="Assets\SpaceshipController.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
