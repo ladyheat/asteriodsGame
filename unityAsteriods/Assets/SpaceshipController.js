@@ -49,6 +49,10 @@ function Update () {
 	{
 		transform.position.y = (BorderController.topmost-2);
 	}
+	
+		if(Input.GetKeyDown(KeyCode.Escape)){
+		Application.LoadLevel(0);
+	}
 
 	transform.Translate(Vector3.up * speed * Time.deltaTime * Input.GetAxis("Vertical"));
 	transform.Rotate(Vector3.forward * -50 * Time.deltaTime * Input.GetAxis("Horizontal"));
