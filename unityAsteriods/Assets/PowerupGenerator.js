@@ -1,14 +1,8 @@
 #pragma strict
+var PowerupPrefab:Rigidbody;
+var numPowerup:int;
 
-function Start () {
-
-}
-
-function Update () {
-
-}
-
-function generatePowerup (maxpower:int){
+function generatePowerup(maxpower:int){
 
 	var counter:int;
 	
@@ -19,15 +13,17 @@ function generatePowerup (maxpower:int){
 		
 		xcoord = Random.Range(BorderController.leftmost,BorderController.rightmost);
 		ycoord = Random.Range(BorderController.bottommost,BorderController.topmost);
-		Instantiate(asteriodPrefab,Vector3(xcoord,ycoord,3),Quaternion.identity);
+		Instantiate(PowerupPrefab,Vector3(xcoord,ycoord,3),Quaternion.identity);
 		yield WaitForSeconds(5);
 }
-
-function OnTriggerEnter(other:Collider){
-
-	if (other.gameObject.tag=="powerup"))
-	{
-		speed = 15;
-		Destroy (other.gameobject);
-	}	
 }
+
+function Start () {
+	generatePowerup(numPowerup);
+}
+
+function Update () {
+
+}
+
+

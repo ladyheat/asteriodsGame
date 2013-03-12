@@ -82,4 +82,14 @@ function OnTriggerEnter(other:Collider){
 			Destroy(this.gameObject);	
 		}
 	}
+	
+	if (other.gameObject.tag=="powerup")
+	{
+		speed=15;
+		Destroy (other.gameObject);
+	}	
+
 }
+
+
+	

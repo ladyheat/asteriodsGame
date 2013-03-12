@@ -46,9 +46,11 @@
   <ItemGroup>
      <Compile Include="Assets\AsteriodController.js" />
      <Compile Include="Assets\AsteriodGenerator.js" />
+     <Compile Include="Assets\BlueLaserController.js" />
      <Compile Include="Assets\BorderController.js" />
      <Compile Include="Assets\LaserBeamController.js" />
      <Compile Include="Assets\Menu.js" />
+     <Compile Include="Assets\PowerupController.js" />
      <Compile Include="Assets\PowerupGenerator.js" />
      <Compile Include="Assets\SpaceshipController.js" />
   </ItemGroup>
