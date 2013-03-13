@@ -1,5 +1,6 @@
 #pragma strict
 var speed:int;
+var superSpeed:int;
 
 var leftmost:float;
 var rightmost:float;
@@ -19,36 +20,22 @@ function Start () {
 
 function Update () {
 
+	BorderController.EnableBorders(transform);
+	
 	if(Input.GetKey(KeyCode.Space))
 	{
-		speed = 10;
+		transform.Translate(Vector3.up * superSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+	}
+	else
+	{
+		transform.Translate(Vector3.up * speed * Input.GetAxis("Vertical") * Time.deltaTime);
 	}
 	
 	if(Input.GetKeyDown(KeyCode.Z))
 	{
 		Instantiate(laserBeam,transform.position,transform.rotation);
 	}
-
-	if (transform.position.x > (BorderController.rightmost-2))
-	{
-		transform.position.x = (BorderController.leftmost+2);
-	}
 	
-	if (transform.position.x < (BorderController.leftmost+2))
-	{
-		transform.position.x = (BorderController.rightmost-2);
-	}
-	
-	//y coordinates
-	if (transform.position.y > (BorderController.topmost-2))
-	{
-		transform.position.y = (BorderController.bottommost+2);
-	}
-	
-	if (transform.position.y < (BorderController.bottommost+2))
-	{
-		transform.position.y = (BorderController.topmost-2);
-	}
 	
 		if(Input.GetKeyDown(KeyCode.Escape)){
 		Application.LoadLevel(0);

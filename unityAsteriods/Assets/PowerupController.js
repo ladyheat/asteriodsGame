@@ -14,27 +14,8 @@ function Start () {
 }
 
 function Update () {
-	//x coordinates
-	if (transform.position.x > (BorderController.rightmost))
-	{
-		transform.position.x = (BorderController.leftmost);
-	}
-	
-	if (transform.position.x < (BorderController.leftmost))
-	{
-		transform.position.x = (BorderController.rightmost);
-	}
-	
-		//y coordinates
-	if (transform.position.y > (BorderController.topmost))
-	{
-		transform.position.y = (BorderController.bottommost);
-	}
-	
-	if (transform.position.y < (BorderController.bottommost))
-	{
-		transform.position.y = (BorderController.topmost);
-	}
+
+	BorderController.EnableBorders(transform);
 	
 		
 	if (direction==1){
