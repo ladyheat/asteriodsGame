@@ -6,33 +6,33 @@ var numAsteroids:int;
 
 function generateAsteriods(maxasteroids:int){
 
-	var counter:int;
+	var counter:int=0;
+	var xcoord:int=0;
+	var ycoord:int=0;
+	var zcoord:int=1;
 	
 	for(counter=0;counter<maxasteroids;counter++)
 	{
-		var xcoord:float;
-		var ycoord:float;
 		
 		xcoord = Random.Range(BorderController.leftmost,BorderController.rightmost);
 		ycoord = Random.Range(BorderController.bottommost,BorderController.topmost);
-		Instantiate(asteriodPrefab,Vector3(xcoord,ycoord,3),Quaternion.identity);
-		//wait for one second per asteroid
-		yield WaitForSeconds(1);
+		Instantiate(asteriodPrefab,Vector3(xcoord,ycoord,zcoord),Quaternion.identity);
 	}
 }
 
 
 function Start () {
-	generateAsteriods(numAsteroids);
+	generateAsteriods(3);
+	yield WaitForSeconds(3);
+	generateAsteriods(6);
+	yield WaitForSeconds(10);
+	generateAsteriods(10);
+	yield WaitForSeconds(15);
+	generateAsteriods(10);		
 }
 
 function Update () {
 
-
-
-}
-
-function OnGUI () {
 
 
 }

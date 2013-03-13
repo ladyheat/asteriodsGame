@@ -9,6 +9,10 @@ var bottommost:float;
 
 var laserBeam:Rigidbody;
 
+var startTime:float=0.0;
+var currentTime:float=0.0;
+var elapsedTime:int=0;
+
 var lives:int;
 static var score:int;
 
@@ -16,10 +20,21 @@ function Start () {
 	
 	lives = 3;
 	score = 0;
+	//the time the player started
+	startTime=Time.time;
 }
 
 function Update () {
-
+	
+	currentTime = Time.time;
+	//elapsed time is calculated as follows:
+	elapsedTime = currentTime - startTime;
+	//stops the game after sixty seconds
+	if (elapsedTime < 60)
+	{
+	
+	elapsedTime = currentTime - startTime;
+	//enables borders
 	BorderController.EnableBorders(transform);
 	
 	if(Input.GetKey(KeyCode.Space))
@@ -44,10 +59,15 @@ function Update () {
 	transform.Translate(Vector3.up * speed * Time.deltaTime * Input.GetAxis("Vertical"));
 	transform.Rotate(Vector3.forward * -50 * Time.deltaTime * Input.GetAxis("Horizontal"));
 	
-	
+	} else 
+	{
+		//game over
+		print("game over");
+	}
 }
 function OnGUI () {
-
+	
+	GUI.Label(Rect(0,0,150,50),"Elapsed Time: "+elapsedTime);
 	GUI.Label(Rect(0,45,200,30),"Lives: "+ lives);
 	GUI.Label(Rect(0,60,200,30),"Score: "+ LaserBeamController.score);
 	
